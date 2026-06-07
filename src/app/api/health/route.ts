@@ -1,25 +1,17 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  try {
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-    const whatsappConfigured = !!(
-      process.env.WHATSAPP_PHONE_NUMBER_ID &&
-      process.env.WHATSAPP_ACCESS_TOKEN
-    )
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  const whatsappId = process.env.WHATSAPP_PHONE_NUMBER_ID
 
-    return NextResponse.json({
-      status: 'healthy',
-      timestamp: new Date().toISOString(),
-      checks: {
-        database: supabaseUrl ? 'configured' : 'missing',
-        whatsapp: whatsappConfigured ? 'configured' : 'missing',
-      },
-    })
-  } catch (err) {
-    return NextResponse.json(
-      { status: 'unhealthy', error: String(err) },
-      { status: 500 }
-    )
-  }
+  return NextResponse.json({
+    status: 'healthy',
+    live: true,
+    timestamp: new Date().toISOString(),
+    checks: {
+      database: supabaseUrl && supabaseKey ? 'configured' : 'pending',
+      whatsapp: whatsappId ? 'configured' : 'pending',
+    },
+  })
 }
