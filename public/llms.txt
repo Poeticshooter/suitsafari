@@ -1,0 +1,34 @@
+# Suitsafari
+## Good clothes, guaranteed.
+
+Suitsafari connects customers with trusted local tailors via WhatsApp. Order custom shirts, pants, kurtas, and suits. Serving Latur, Maharashtra.
+
+## How it works
+1. Customer places order on website or via WhatsApp
+2. System assigns nearest available tailor
+3. Tailor receives order on WhatsApp with accept/reject buttons
+4. Tailor stitches the garment
+5. Customer picks up and pays directly to tailor
+
+## Pricing
+- Custom shirt: ₹400
+- Custom pant/trouser: ₹500
+- Kurta: ₹400
+- Suit/Blazer: Contact for quote
+
+## Contact
+- Phone: +91 95791 71771
+- WhatsApp: https://wa.me/919579171771
+- Instagram: https://instagram.com/suitsafari_india
+- Facebook: https://facebook.com/suitsafari.in
+- LinkedIn: https://linkedin.com/company/suitsafari-in
+
+## API
+- POST /api/orders - Create new order
+- GET /api/orders - List orders (admin)
+- GET /api/tailors - List active tailors
+- POST /api/reviews - Submit a review
+- GET /api/health - Health check
+
+## Location
+Latur, Maharashtra, India

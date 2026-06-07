@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suitsafari.vercel.app/api/sitemap
